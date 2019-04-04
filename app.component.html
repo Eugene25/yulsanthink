@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row  id="title">
+    <span id="title" routerLink="/main">율산씽크학원 관리 페이지</span>
+  </mat-toolbar-row>
+
+
+  <mat-toolbar-row>
+    <a routerLink="/studentInfo"><button mat-flat-button color="accent">학생관리</button></a>
+    <a routerLink="/employeeInfo"><button mat-flat-button color="accent">근로자관리</button></a>
+    <a routerLink="/files"><button mat-flat-button color="accent">각종서식</button></a>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+      <mat-accordion>
+  
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <div  id="warn" [hidden]="user">
+                <mat-panel-title>
+                 인증하고 시작하기
+                </mat-panel-title>
+              </div>
+              <div *ngIf="user">
+                  <mat-panel-title>
+                      인증됨
+                  </mat-panel-title>
+              </div>
+            </mat-expansion-panel-header>
+        
+            <app-auth></app-auth>
+
+          </mat-expansion-panel>
+        
+        </mat-accordion>
+
+   
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+<!----app-auth></app-auth>
+
+
+<nav>
+    <a routerLink="/createNewStudent">학생추가</a>
+    <a routerLink="/studentInfo">학생관리</a>
+    <a routerLink="/auth">인증</a>
+  </nav-->
+  
+  <router-outlet></router-outlet>
